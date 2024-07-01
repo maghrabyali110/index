@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة تسويق عقاري</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #45a049;
+            border-radius: 5px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        section {
+            padding: 50px 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin: 20px auto;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .property-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="">
+            <h1>شركة التسويق العقاري</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">الرئيسية</a></li>
+                <li><a onclick="showSection('about')">عن الشركة</a></li>
+                <li><a onclick="showSection('services')">الخدمات</a></li>
+                <li><a onclick="showSection('properties')">قائمة العقارات</a></li>
+                <li><a onclick="showSection('contact')">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>مرحبا بكم في شركة التسويق العقاري</h2>
+            <p>نحن نساعدك في العثور على منزلك المثالي.</p>
+        </section>
+
+        <section id="about" class="hidden">
+            <h2>عن الشركة</h2>
+            <p>شركة التسويق العقاري تأسست لتقديم أفضل خدمات العقارات في السوق. نحن نعمل بجد لنضمن رضا عملائنا من خلال توفير خيارات عقارية متنوعة.</p>
+        </section>
+
+        <section id="services" class="hidden">
+            <h2>خدماتنا</h2>
+            <ul>
+                <li>تسويق العقارات</li>
+                <li>إدارة الممتلكات</li>
+                <li>تقييم العقارات</li>
+                <li>استشارات الاستثمار العقاري</li>
+            </ul>
+        </section>
+
+        <section id="properties" class="hidden">
+            <h2>قائمة العقارات</h2>
+            <div class="property-item">
+                <h3>فيلا فاخرة</h3>
+                <p>فيلا رائعة بمساحة 400 متر مربع مع حديقة ومسبح.</p>
+            </div>
+            <div class="property-item">
+                <h3>شقة في وسط المدينة</h3>
+                <p>شقة حديثة في قلب المدينة، قريبة من جميع الخدمات.</p>
+            </div>
+            <div class="property-item">
+                <h3>منزل ريفي</h3>
+                <p>منزل جميل في منطقة ريفية هادئة، مثالي للعائلات.</p>
+            </div>
+            <button onclick="showSection('contact')">اتصل بنا لمزيد من التفاصيل</button>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>تواصل معنا</h2>
+            <form>
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 شركة التسويق العقاري. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
